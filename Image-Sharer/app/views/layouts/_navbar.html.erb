@@ -1,0 +1,30 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+ <div class="container">
+   <div class="navbar-header">
+    <%= link_to 'Image Sharer', root_path, class:'navbar-brand' %>
+   </div>
+
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav pull-left">
+      <% if logged_in? %>
+        <li class="nav-item active"> <%= link_to 'Upload', new_image_path, class:'nav-link' %> </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="navbar">
+    <ul class="nav navbar-nav pull-right">
+      <% if logged_in? %>
+          <li class="dropdown nav-item nav-link" aria-labelledby="dropdownMenuButton">
+            <%= content_tag(:div, current_user.name, class: 'test-logged-user dropdown-toggle data-toggle-dropdown', data: {toggle: 'dropdown' }) %>
+            <ul class="test-dropdown-menu dropdown-menu">
+              <li><%= link_to 'Log Out', session_path(current_user), method: :delete, class:'test-logout-user dropdown-item' %></li>
+            </ul>
+          </li>
+      <% else %>
+          <li class="nav-item"> <%= link_to 'Register', new_user_path, class:'test-user-register nav-link float-right' %> </li>
+          <li class="nav-item"> <%= link_to 'Log In', new_session_path, class:'test-user-login nav-link float-right' %> </li>
+      <% end %>
+    </ul>
+  </div>
+ </div>
+</nav>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+  </head>
+  <body>
+    <p>Hi,</p>
+    <% if @msg.present? %>
+      <p>Message : <%= @msg %> </p>
+    <% end %>
+    <%= image_tag @url %><br/>
+    <p> To view all images, just follow this link: <%= root_url %> </p>
+  </body>
+</html>

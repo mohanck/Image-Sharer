@@ -1,0 +1,7 @@
+<%= simple_form_for @user, url: users_path, html: { class: 'test-user-form text-center' }, method: :post do |u| %>
+    <%= u.input :name, label: 'Name', placeholder: 'Your name here', hint: 'Maximum 30 characters', input_html: { class: 'test-user-name form-control' } %><br/>
+    <%= u.input :email, label: 'Email', placeholder: 'Your email here' , hint: 'Must be a valid email', input_html: { class: 'test-user-email form-control' } %><br/>
+    <%= u.input :password, placeholder: 'Your password here', hint: 'Minimum 5 characters', input_html: { class: 'test-user-password form-control' } %><br/>
+    <%= u.input :password_confirmation, label: 'Confirm Password', placeholder: 'Your password again', hint: 'Must match password', input_html: { class: 'test-user-confirm-password form-control' } %><br/>
+    <%= u.submit 'Register', class: 'test-user-submit btn btn-outline-success' %>
+<% end %>

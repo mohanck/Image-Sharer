@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Image Sharer</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+  </head>
+
+  <body>
+    <%= render 'layouts/navbar' %>
+
+    <div class="text-muted text-center">
+      <% flash.each do |key, value| %>
+          <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+    </div>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <%= render 'layouts/footer' %>
+    <%= javascript_include_tag 'application' %>
+    <%= yield :javascript %>
+  </body>
+
+</html>

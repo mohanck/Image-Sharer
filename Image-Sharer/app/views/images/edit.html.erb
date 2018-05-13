@@ -1,0 +1,6 @@
+<%= simple_form_for @image, url: image_path(@image.id), html: { class: 'test-edit-image-form text-center' }, method: :put do |f| %>
+  <%= image_tag @image.url, class:'test-edit-image-img' %>
+  <%= f.input :title, label: 'Image Name', input_html: { class: 'test-edit-image-title' } %>
+  <%= f.input :tag_list, label: 'Image Tags', input_html: { value: @image.tag_list.join(', '), class: 'test-edit-image-tag-list' } %>
+  <%= f.submit 'Update Image', class: 'test-image-edit-submit btn btn-outline-success' %>
+<% end %>

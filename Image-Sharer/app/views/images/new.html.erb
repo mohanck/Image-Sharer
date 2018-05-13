@@ -1,0 +1,6 @@
+<%= simple_form_for @image, url: images_path, html: { class: 'text-center' }, method: :post do |i| %>
+    <%= i.input :title, label: 'Image Name' %><br/>
+    <%= i.input :url, label: 'Image URL' %><br/>
+    <%= i.input :tag_list, label: 'Image Tags', input_html: { value: @image.tag_list.to_s } %><br/>
+    <%= i.submit 'Upload Image', class: 'btn btn-outline-success' %>
+<% end %>

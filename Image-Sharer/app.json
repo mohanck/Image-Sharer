@@ -1,0 +1,44 @@
+{
+  "name": "ropes",
+  "scripts": {
+    "postdeploy": "rails db:schema:load db:seed"
+  },
+  "env": {
+    "LANG": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true
+    }/*,
+    "SECRET_KEY_BASE": {
+      "generator": "secret"
+    },
+    "SENDGRID_USERNAME": {
+      "required": true
+    },
+    "SENDGRID_PASSWORD": {
+      "required": true
+    },
+    "MAILER_HOST": {
+      "required": true
+    }*/
+  },
+  "addons": [
+    "heroku-postgresql:hobby-dev",
+    "sendgrid:starter"
+  ],
+  "buildpacks": [
+    {
+      "url": "urn:buildpack:heroku/nodejs"
+    },
+    {
+      "url": "urn:buildpack:heroku/ruby"
+    }
+  ]
+}

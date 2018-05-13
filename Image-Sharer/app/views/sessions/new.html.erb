@@ -1,0 +1,6 @@
+<%= simple_form_for :session, url: sessions_path, html: { class: 'test-login-form test-login-form text-center' } do |s| %>
+    <%= s.input :email, label: 'Email', placeholder: 'Your email here', hint: 'Enter your registered email', input_html: { class: 'test-login-email form-control' } %><br/>
+    <%= s.input :password, placeholder: 'Your password here', hint: 'Enter your password', input_html: { class: 'test-login-password form-control' } %>
+    <%= s.input :remember_me, as: :boolean, input_html: { class: 'test-login-remember_me' } %>
+    <%= s.submit 'Log In', class: 'test-login-submit btn btn-outline-success' %>
+<% end %>

@@ -1,0 +1,9 @@
+<% if flash[:danger].blank? %>
+  <div class="js-images row">
+    <%= render partial: 'images/image', collection: @images %>
+  </div>
+  <% content_for :javascript do %>
+    <%= javascript_include_tag 'modal/main' %>
+  <% end %>
+  <%= render partial: 'modals/image_modal' %>
+<% end %>
